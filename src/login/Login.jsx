@@ -51,14 +51,14 @@ const Login = () => {
                 <label className="label">Ingresa tu contraseña </label>
                 <div className="control has-icons-left has-icons-right">
                     <input className="input is-success" type="password" placeholder="e.g. beatriz@gmail.com" value={password} onChange={(event) => setPassword(event.target.value)} />
-                    <span class="icon is-small is-left">
+                    <span className="icon is-small is-left">
                         <i className="fas fa-lock"></i>
                     </span>
                     <span className="icon is-small is-right">
                         <i className="fas fa-check"></i>
                     </span>
                 </div>
-                <div class="field is-grouped">
+                <div className="field is-grouped">
                     <div className="control">
                         <button className="button is-primary" onClick={() => submitCredentials()}>Acceder</button>
                     </div>

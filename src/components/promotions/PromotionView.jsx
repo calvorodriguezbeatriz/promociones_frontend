@@ -15,7 +15,7 @@ const PromotionView = () => {
             response.json()
             .then(data=>{
                 console.log (data)
-                setPromotion (data[0])
+                setPromotion (data)
             })
         })
     },[promotionId])

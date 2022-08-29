@@ -27,7 +27,7 @@ const PromotionsList = () => {
                 promotions.map((promotion)=>{
                     return (
                         // <div onClick={()=>{navigate ("promotion/" +promotion.id)}}>
-                        <PromotionCard promotion={promotion}/>
+                        <PromotionCard key={promotion.id} promotion={promotion}/>
                         // </div>
                     )
                 })
