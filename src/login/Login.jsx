@@ -1,10 +1,12 @@
 import React from 'react'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import "./login.scss"
 
 const Login = () => {
     const [email,setEmail]=useState("")
     const [password,setPassword]=useState("")
+    const navigate=useNavigate()
     // const[counter,setCounter]=useState(0)
 
     const submitCredentials= ()=> {
@@ -23,11 +25,23 @@ const Login = () => {
         .then((response)=>{
             setEmail("")
             setPassword ("")
-            response.json()
-            .then(data=>{
-                console.log(data)
-            })
-            alert("Te has logeado correctamente")
+            if (response.ok) {
+                response.json()
+                .then(data=>{
+                    console.log(data)
+                    localStorage.setItem('token', data.token);
+                    navigate ("/")
+                    alert("Te has logeado correctamente")
+                })
+            }
+            else {
+                localStorage.removeItem('token')
+                alert ("La contraseña o el usuario no son correctos")
+            }
+        })
+        .catch(error=>{
+            localStorage.removeItem('token')
+            alert ("El login falló por:" +error)
         })
     }
 

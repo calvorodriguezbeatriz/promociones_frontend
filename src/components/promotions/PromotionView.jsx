@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import './PromotionView.scss'
 
 const PromotionView = () => {
     const [promotion,setPromotion]=useState()
@@ -24,13 +25,15 @@ const PromotionView = () => {
         <div className="promotion-view">
             <h1>Detalle de la promoción</h1>
             <div key={promotion?.id}>
+                <div className="offer-top">
                 <h2>{promotion?.brand}</h2>
-                <img src={promotion?.logo}/>
-                <h3>{promotion?.discount}</h3>
+                <h3 className="tag">{promotion?.discount}</h3>
+                <img className="logo" src={promotion?.logo}/>
+                </div>
                 <h3>{promotion?.title}</h3>
                 <img src={promotion?.image}/>
                 <p>{promotion?.description}</p>
-                <button>{promotion?.coupon}</button>
+                <button className="button-default">{promotion?.coupon}</button>
             </div>
         </div>
     )
