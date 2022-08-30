@@ -6,16 +6,10 @@ import LogOutButton from './components/promotions/LogOut/LogOutButton';
 
  
 const App=()=> {
-  // const [loggedIn, setLoggedIn] = useState();
-
-  // const onLoginChange = ( isLoggedIn ) => {
-  //   setLoggedIn( isLoggedIn )
-  // }
-
+ 
   const isLoggedIn=()=>{
     let token = localStorage.getItem('token')
     const result = token === null || token === undefined || token === ''
-    console.log( token, !result )
     return  !result
   }
 
@@ -32,7 +26,7 @@ const App=()=> {
       <Router>
         <Routes>
           <Route path="/" element={ isLoggedIn()? <PromotionsList /> : <Login/> }/>
-          <Route path="promotion/:id" element={<PromotionView />}/>
+          <Route path="promotion/:id" element={isLoggedIn()?<PromotionView /> : <Login/>  }/>
         </Routes>
       </Router>
     </div>

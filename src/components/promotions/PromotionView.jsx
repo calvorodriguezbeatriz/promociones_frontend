@@ -7,10 +7,15 @@ const PromotionView = () => {
     const [promotion,setPromotion]=useState()
     const params=useParams ()
     const promotionId= params.id
-    console.log (promotionId)
+    
     useEffect (()=>{
+        const token = localStorage.getItem('token')
+
         fetch ("http://localhost:5000/promotion/"+promotionId,{
-            method: "GET"
+            method: "GET",
+            headers:{
+                "auth-token": token
+            }
         })
         .then((response)=>{
             response.json()

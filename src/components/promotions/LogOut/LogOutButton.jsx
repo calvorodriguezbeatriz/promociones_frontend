@@ -2,7 +2,8 @@ import React from 'react'
 
 const LogOutButton = () => {
   const logout = ()=> {
-    localStorage.removeItem( 'token' );
+    // localStorage.clear();
+    localStorage.removeItem('token')
     window.location.href='/'
   }
   

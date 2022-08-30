@@ -10,10 +10,12 @@ const PromotionsList = () => {
     const [promotions,setPromotions]=useState([])
     
     useEffect (()=>{
+        const token = localStorage.getItem('token')
+
         fetch ("http://localhost:5000/alldata",{
             method: "GET",
             headers:{
-                "auth-token":localStorage.getItem("token")
+                "auth-token": token
             }
         })
         .then((response)=>{

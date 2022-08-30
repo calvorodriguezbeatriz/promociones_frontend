@@ -1,13 +1,10 @@
 import React from 'react'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import "./login.scss"
 
 const Login = () => {
     const [email,setEmail]=useState("")
     const [password,setPassword]=useState("")
-    const navigate=useNavigate()
-    // const[counter,setCounter]=useState(0)
 
     const submitCredentials= ()=> {
         console.log(email, password)
@@ -29,7 +26,7 @@ const Login = () => {
                 response.json()
                 .then(data=>{
                     console.log(data)
-                    localStorage.setItem('token', data.token);
+                    localStorage.setItem('token', data.data);
                     window.location.href = '/'
                 })
             }
