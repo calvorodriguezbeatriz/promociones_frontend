@@ -17,7 +17,7 @@ const App=()=> {
   return (
     <div className="App">
       <div className="header">
-        <h1>Promociones</h1>
+        <h1>El espacio de promociones</h1>
         { isLoggedIn() &&
           <LogOutButton/>
         }

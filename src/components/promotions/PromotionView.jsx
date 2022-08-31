@@ -24,19 +24,21 @@ const PromotionView = () => {
                 setPromotion (data)
             })
         })
-    },[promotionId])
+    }, [promotionId])
 
     return (
         <div className="promotion-view">
             <h1>Detalle de la promoción</h1>
             <div key={promotion?.id}>
                 <div className="offer-top">
-                <h2>{promotion?.brand}</h2>
-                <h3 className="tag">{promotion?.discount}</h3>
-                <img className="logo" src={promotion?.logo}/>
+                    <h2>{promotion?.brand}</h2>
+                    <h3 className="tag">{promotion?.discount}</h3>
+                    <img className="logo" src={promotion?.logo} />
                 </div>
-                <h3>{promotion?.title}</h3>
-                <img src={promotion?.image}/>
+                <div>
+                    <h3 className="description-text">{promotion?.title}</h3>
+                </div>
+                <img className="offer-image" src={promotion?.image} />
                 <p>{promotion?.description}</p>
                 <button className="button-default">{promotion?.coupon}</button>
             </div>

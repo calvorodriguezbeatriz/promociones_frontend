@@ -8,7 +8,7 @@ const LogOutButton = () => {
   }
   
   return (
-    <button onClick={ ()=>logout() }>LogOutButton</button>
+    <button className="button is-primary" onClick={ ()=>logout() }>Cierre de sesión</button>
   )
 }
 

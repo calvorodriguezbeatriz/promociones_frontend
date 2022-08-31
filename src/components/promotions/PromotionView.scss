@@ -60,13 +60,30 @@
                 justify-content: space-between;
                 -webkit-box-align: center;
                 align-items: center;
-                    .logo{
-                            width: 10%;
-                            display: block;
 
+                .logo{
+                    width: 10%;
+                    display: block;
+
+                    .description-text{
+                        font-weight: 600 !important;
+                        margin-top: 0;
+                        color: #7c2727;
+                        margin-bottom: 5px;
+                    }
+                    .offer-image {
+                        position: relative;
+                        height: 273 px;
+                        overflow: hidden;
+                        width: 100%;
+                        border-radius: 5px;
+                        display: flex;
+                        -webkit-box-pack: center;
+                        justify-content: center;
+                        box-shadow: 0 0 7px #cacaca;
+                    }
                     }
                 }
             }
         }
     }
-
